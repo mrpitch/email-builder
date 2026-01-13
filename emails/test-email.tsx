@@ -9,6 +9,7 @@ import {
 	Html,
 	Img,
 	Link,
+	pixelBasedPreset,
 	Preview,
 	Row,
 	Section,
@@ -18,12 +19,18 @@ import {
 
 import {cn} from "@/lib/utils/cn";
 import {baseUrl} from "@/lib/utils/constants";
-import {config, configDark} from "../lib/styles/config";
-console.log("config", config)
+//import {config, configDark} from "../lib/styles/config";
+//console.log("config", config)
+import { theme } from '@/lib/styles/theme'
 const Email = () => {
   return (
 		<Html>
-			<Tailwind config={config}>
+			<Tailwind
+			config={{
+        presets: [pixelBasedPreset],
+        theme,
+      }}
+			>
 				<Head />
 				<Body
 					className={cn(
